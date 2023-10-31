@@ -60,7 +60,8 @@ img{
 
 /* CONTENT */
 #container{
-    width: 36rem;
+    width: 100%;
+    max-width: 58.8rem;
     padding-inline:2.4rem;
     margin: 5.6rem auto 0;
 }
