@@ -1,184 +1,206 @@
 /* GLOBAL */
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: var(--text-color);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--text-color);
 }
-  
+
 :root {
-    font-size: 62.5%; /*1rem = 10px*/
+  font-size: 62.5%; /*1rem = 10px*/
 
-    --text-color:#ffffff;
-    --stroke-color:#ffffff80;
-    --surface-color:#ffffff0d;
-    --surface-color-hover:#ffffff05;
-    --links-color:#ffffff33;
-    --bg-url:url("./assets/bg-mobile.jpg");
-    --bg-switch:url(./assets/moon-stars.svg);
+  --text-color: #ffffff;
+  --stroke-color: #ffffff80;
+  --surface-color: #ffffff0d;
+  --surface-color-hover: #ffffff05;
+  --links-color: #ffffff33;
+  --bg-url: url("./assets/bg-mobile.jpg");
+  --bg-switch: url(./assets/moon-stars.svg);
 }
 
-.light{
-    --text-color:#000000;
-    --stroke-color:#00000080;
-    --surface-color:#0000000d;
-    --surface-color-hover:#00000005;
-    --links-color:#00000033;
-    --bg-url:url("./assets/bg-mobile-light.jpg");
-    --bg-switch:url(./assets/sun.svg);
-
+.light {
+  --text-color: #000000;
+  --stroke-color: #00000080;
+  --surface-color: #0000000d;
+  --surface-color-hover: #00000005;
+  --links-color: #00000033;
+  --bg-url: url("./assets/bg-mobile-light.jpg");
+  --bg-switch: url(./assets/sun.svg);
 }
 
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
 
-html, 
-body{
-    width: 100%;
-    height: 100%;
+html,
+body {
+  width: 100%;
+  height: 100%;
 }
 
-body{
-    height: 100vh;
-    font-size: 1.6rem;
-    font-family: 'Inter',sans-serif;
-    overflow: overlay;
-    background: var(--bg-url) no-repeat top center/cover;
+body {
+  height: 100vh;
+  font-size: 1.6rem;
+  font-family: "Inter", sans-serif;
+  overflow: overlay;
+  background: var(--bg-url) no-repeat top center/cover;
 }
 
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
 
-ul{
-    list-style: none;
-} 
+ul {
+  list-style: none;
+}
 
-img{
-    width: 100%;
+img {
+  width: 100%;
 }
 
 /* CONTENT */
-#container{
-    width: 100%;
-    max-width: 58.8rem;
-    padding-inline:2.4rem;
-    margin: 5.6rem auto 0;
+#container {
+  width: 100%;
+  max-width: 58.8rem;
+  padding-inline: 2.4rem;
+  margin: 5.6rem auto 0;
 }
 
 #container #profile,
 #container ul,
 #container #social-links,
-footer{
-    padding-block: 2.4rem;
-    text-align: center;
+footer {
+  padding-block: 2.4rem;
+  text-align: center;
 }
 
-#container #profile img{
-    width: 11.2rem;
+#container #profile img {
+  width: 11.2rem;
 }
 
-#container #profile p{
-    margin-top: .8rem;
-    font-weight: 500;
+#container #profile p {
+  margin-top: 0.8rem;
+  font-weight: 500;
 }
 
-#container #switch{
-    width: 6.4rem;
-    margin: .4rem auto;
-    position: relative;
+#container #switch {
+  width: 6.4rem;
+  margin: 0.4rem auto;
+  position: relative;
 }
 
-#container #switch button{
-    width: 3.2rem;
-    height: 3.2rem;
-    background:#ffffff var(--bg-switch) no-repeat center;
-    border: none;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    z-index: 1;
-    transform: translateY(-50%);
+#container #switch button {
+  width: 3.2rem;
+  height: 3.2rem;
+  background: #ffffff var(--bg-switch) no-repeat center;
+  border: none;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+  animation: slide-out 0.2s;
 }
 
-.light #container #switch button{
-    right: 0;
-    left: initial;
+#container #switch button:hover {
+  outline: 0.8rem solid var(--links-color);
 }
 
-#container #switch span{
-    width: 6.4rem;
-    height: 2.4rem;
-    background: var(--surface-color);
-    border: .1rem solid var(--stroke-color);
-    border-radius: 2rem;
-    backdrop-filter: blur(.4rem);
-    --webkit-backdrop-filter: blur(.4rem);
-    display: block;
+.light #container #switch button {
+  animation: slide-in 0.2s forwards;
 }
 
-#container ul{
-    display: flex;
-    flex-direction: column;
-    gap: 1.6rem;
+#container #switch span {
+  width: 6.4rem;
+  height: 2.4rem;
+  background: var(--surface-color);
+  border: 0.1rem solid var(--stroke-color);
+  border-radius: 2rem;
+  backdrop-filter: blur(0.4rem);
+  --webkit-backdrop-filter: blur(0.4rem);
+  display: block;
 }
 
-#container ul li a{
-    padding: 1.6rem 2.4rem;
-    background-color: var(--surface-color);
-    border: .1rem solid var(--stroke-color);
-    border-radius: .8rem;
-    backdrop-filter: blur(.4rem);
-    -webkit-backdrop-filter: blur(.4rem);
-    font-weight: 500;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background .2s;
+#container ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
 }
 
-#container ul li a:hover{
-    background-color: var(--surface-color-hover);
-    border: .15rem solid var(--text-color);
+#container ul li a {
+  padding: 1.6rem 2.4rem;
+  background-color: var(--surface-color);
+  border: 0.1rem solid var(--stroke-color);
+  border-radius: 0.8rem;
+  backdrop-filter: blur(0.4rem);
+  -webkit-backdrop-filter: blur(0.4rem);
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.2s;
 }
 
-#container #social-links{
-    font-size: 2.4rem;
-    display: flex;
-    justify-content: center;
+#container ul li a:hover {
+  background-color: var(--surface-color-hover);
+  border: 0.15rem solid var(--text-color);
 }
 
-#container #social-links a{
-    padding: 1.6rem;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background .2s;
+#container #social-links {
+  font-size: 2.4rem;
+  display: flex;
+  justify-content: center;
 }
 
-#container #social-links a:hover{
-    background: var(--links-color);
+#container #social-links a {
+  padding: 1.6rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.2s;
 }
 
-#container footer{
-    font-size: 1.4rem;
+#container #social-links a:hover {
+  background: var(--links-color);
 }
 
-#container footer span a{
-    font-weight: 500;
-    text-decoration: underline;
+#container footer {
+  font-size: 1.4rem;
+}
+
+#container footer span a {
+  font-weight: 500;
+  text-decoration: underline;
 }
 
 /* media queries */
-@media(min-width:700px){
-    :root{
-        --bg-url:url("./assets/bg-desktop.jpg");
-    }
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url("./assets/bg-desktop.jpg");
+  }
 
-    .light{
-        --bg-url:url("./assets/bg-desktop-light.jpg");
-    }
+  .light {
+    --bg-url: url("./assets/bg-desktop-light.jpg");
+  }
+}
+
+/* animation */
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
 }
