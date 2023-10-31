@@ -40,6 +40,7 @@ body{
 }
 
 body{
+    height: 100vh;
     font-size: 1.6rem;
     font-family: 'Inter',sans-serif;
     overflow: overlay;
@@ -169,4 +170,15 @@ footer{
 #container footer span a{
     font-weight: 500;
     text-decoration: underline;
+}
+
+/* media queries */
+@media(min-width:700px){
+    :root{
+        --bg-url:url("./assets/bg-desktop.jpg");
+    }
+
+    .light{
+        --bg-url:url("./assets/bg-desktop-light.jpg");
+    }
 }
